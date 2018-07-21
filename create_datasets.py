@@ -13,7 +13,6 @@ import glob
 import matplotlib.pyplot as plt
 import librosa.display
 import IPython.display as ipd
-import librosa
 import numpy as np
 
 plt.figure(figsize=(12, 4))
@@ -91,59 +90,115 @@ for raw in dStressed:
 #type(X_Stressed)        
 
 #import pandas as pd
-#dataset = pd.read_csv('Data.csv')
+#train = pd.read_csv('Data.csv')
+#type(train)
+#train['1'].Class.value_counts()
+#train['1']=train.iloc[:,0].values
+# =============================================================================
+# 
+# X_Attention=pd.DataFrame(X_Attention)
+# a=len(X_Attention)-1000
+# X_Attention=X_Attention.iloc[:-a,:]
+# type(X_Attention)
+# X_Attention=X_Attention[0].tolist()
+# 
+# Y_Attention=pd.DataFrame(Y_Attention)
+# a=len(Y_Attention)-1000
+# Y_Attention=Y_Attention.iloc[:-a,:]
+# #type(X_Attention)
+# Y_Attention=Y_Attention[0].tolist()
+# 
+# X_Hungry=pd.DataFrame(X_Hungry)
+# a=len(X_Hungry)-1000
+# X_Hungry=X_Hungry.iloc[:-a,:]
+# #type(X_Attention)
+# X_Hungry=X_Hungry[0].tolist()
+# 
+# Y_Hungry=pd.DataFrame(Y_Hungry)
+# a=len(Y_Hungry)-1000
+# Y_Hungry=Y_Hungry.iloc[:-a,:]
+# #type(X_Attention)
+# Y_Hungry=Y_Hungry[0].tolist()
+# 
+# X_Overtired=pd.DataFrame(X_Overtired)
+# a=len(X_Overtired)-1000
+# X_Overtired=X_Overtired.iloc[:-a,:]
+# #type(X_Attention)
+# X_Overtired=X_Overtired[0].tolist()
+# 
+# Y_Overtired=pd.DataFrame(Y_Overtired)
+# a=len(Y_Overtired)-1000
+# Y_Overtired=Y_Overtired.iloc[:-a,:]
+# #type(X_Attention)
+# Y_Overtired=Y_Overtired[0].tolist()
+# 
+# X_Stressed=pd.DataFrame(X_Stressed)
+# a=len(X_Stressed)-1000
+# X_Stressed=X_Stressed.iloc[:-a,:]
+# #type(X_Attention)
+# X_Stressed=X_Stressed[0].tolist()
+# 
+# Y_Stressed=pd.DataFrame(Y_Stressed)
+# a=len(Y_Stressed)-1000
+# Y_Stressed=Y_Stressed.iloc[:-a,:]
+# #type(X_Attention)
+# Y_Stressed=Y_Stressed[0].tolist()
+# 
+# len(Y_Stressed)
+# 
+# =============================================================================
+
 
 X_Attention=pd.DataFrame(X_Attention)
-a=len(X_Attention)-1000
-X_Attention=X_Attention.iloc[:-a,:]
+X_Attention=X_Attention.iloc[:,:]
 type(X_Attention)
 X_Attention=X_Attention[0].tolist()
 
 Y_Attention=pd.DataFrame(Y_Attention)
-a=len(Y_Attention)-1000
+a=len(Y_Attention)-len(X_Attention)
 Y_Attention=Y_Attention.iloc[:-a,:]
 #type(X_Attention)
 Y_Attention=Y_Attention[0].tolist()
 
 X_Hungry=pd.DataFrame(X_Hungry)
-a=len(X_Hungry)-1000
-X_Hungry=X_Hungry.iloc[:-a,:]
+X_Hungry=X_Hungry.iloc[:,:]
 #type(X_Attention)
 X_Hungry=X_Hungry[0].tolist()
 
 Y_Hungry=pd.DataFrame(Y_Hungry)
-a=len(Y_Hungry)-1000
-Y_Hungry=Y_Hungry.iloc[:-a,:]
+
+a=len(Y_Hungry)-len(X_Hungry)
+Y_Hungry=Y_Hungry.iloc[:-a:,:]
 #type(X_Attention)
 Y_Hungry=Y_Hungry[0].tolist()
 
+
+Y_Overtired=pd.DataFrame(Y_Overtired)
+Y_Overtired=Y_Overtired.iloc[:,:]
+#type(X_Attention)
+Y_Overtired=Y_Overtired[0].tolist()
+
+
 X_Overtired=pd.DataFrame(X_Overtired)
-a=len(X_Overtired)-1000
+
+a=len(X_Overtired)-len(Y_Overtired)
 X_Overtired=X_Overtired.iloc[:-a,:]
 #type(X_Attention)
 X_Overtired=X_Overtired[0].tolist()
 
-Y_Overtired=pd.DataFrame(Y_Overtired)
-a=len(Y_Overtired)-1000
-Y_Overtired=Y_Overtired.iloc[:-a,:]
-#type(X_Attention)
-Y_Overtired=Y_Overtired[0].tolist()
-
 X_Stressed=pd.DataFrame(X_Stressed)
-a=len(X_Stressed)-1000
-X_Stressed=X_Stressed.iloc[:-a,:]
+
+X_Stressed=X_Stressed.iloc[:,:]
 #type(X_Attention)
 X_Stressed=X_Stressed[0].tolist()
 
 Y_Stressed=pd.DataFrame(Y_Stressed)
-a=len(Y_Stressed)-1000
+a=len(Y_Stressed)-len(X_Stressed)
 Y_Stressed=Y_Stressed.iloc[:-a,:]
 #type(X_Attention)
 Y_Stressed=Y_Stressed[0].tolist()
 
 len(Y_Stressed)
-
-
 
 
 X_Attention=pd.DataFrame(X_Attention)
